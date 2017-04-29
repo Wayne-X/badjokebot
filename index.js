@@ -37,8 +37,7 @@ app.post('/webhook/', function (req, res) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text) {
-		    let text = event.message.text;
-		    sendTextMessage(sender, makeBadJoke());
+		    sendTextMessage(sender, "makeBadJoke()");
 	    }
     }
     res.sendStatus(200);
